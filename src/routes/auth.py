@@ -1,12 +1,11 @@
 from pathlib import Path
 
-import templates
+
 from fastapi import APIRouter, HTTPException, Depends, status, BackgroundTasks, Request
 from fastapi.security import OAuth2PasswordRequestForm, HTTPAuthorizationCredentials, HTTPBearer
 from sqlalchemy.ext.asyncio import AsyncSession
 from starlette.responses import HTMLResponse
 from starlette.templating import Jinja2Templates
-from fastapi.templating import Jinja2Templates
 
 from src.database.db import get_async_session
 from src.repository import users as rep_users
@@ -102,8 +101,8 @@ async def refresh_token(credentials: HTTPAuthorizationCredentials = Depends(get_
     return {"access_token": access_token, "refresh_token": refresh_token, "token_type": "bearer"}
 
 
-# templates_path = Path(__file__).parent.parent / 'services' / 'templates'
-# templates = Jinja2Templates(directory=str(templates_path))
+templates_path = Path(__file__).parent.parent / 'services' / 'templates'
+templates = Jinja2Templates(directory=str(templates_path))
 
 
 @router.get('/confirmed_email/{token}', response_class=HTMLResponse)

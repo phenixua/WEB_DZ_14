@@ -1,4 +1,4 @@
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import BaseModel, EmailStr, Field, ConfigDict
 from src.entity.models import Role
 
 
@@ -13,10 +13,12 @@ class UserResponseSchema(BaseModel):
     username: str
     email: EmailStr
     role: Role
-    avatar: str
+    avatar: str | None
 
-    class Config:
-        from_attributes = True
+    # class Config:
+    #     from_attributes = True
+
+    model_config = ConfigDict(from_attributes=True)
 
 
 class TokenSchema(BaseModel):

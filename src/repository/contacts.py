@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from fastapi import HTTPException
 from sqlalchemy import select, and_, or_, func
 from sqlalchemy.ext.asyncio import AsyncSession
-from src.entity.models import Contact
+from src.entity.models import Contact, User
 from src.schemas.contact_schemas import ContactSchema
 
 
@@ -41,23 +41,35 @@ async def get_contact(contact_id: int, db: AsyncSession):
     return contact.scalar_one_or_none()
 
 
-async def create_contact(body: ContactSchema, db: AsyncSession):
+async def get_contacts_all(limit: int, offset: int, db: AsyncSession):
     """
-   The create_contact function creates a new contact in the database.
+    The get_contacts_all function returns a list of all contacts in the database.
+    The limit and offset parameters are used to paginate the results.
 
-   :param body: ContactSchema: Validate the request body
-   :param db: AsyncSession: Access the database
-   :param user: User: Get the user id from the request
-   :return: A contact object
-   :doc-author: Trelent
-   """
 
-    contact_data = body.dict(exclude_unset=True)
-    contact = Contact(**contact_data)
-    db.add(contact)
-    await db.commit()
-    await db.refresh(contact)
-    return contact
+    :param limit: int: Limit the number of results returned
+    :param offset: int: Set the offset for the query
+    :param db: AsyncSession: Pass the database session to the function
+    :return: A list of contact objects
+    :doc-author: Trelent
+    """
+    statement = select(Contact).offset(offset).limit(limit)
+    contacts = await db.execute(statement)
+    return contacts.scalars().all()
+
+
+async def create_contact(session: AsyncSession, contact_data: ContactSchema, user: User) -> Contact:
+    new_contact_data = contact_data.dict(exclude_unset=True)
+    new_contact_data['user_id'] = user.id
+
+    async with session.begin():
+        # Використовуйте метод create, який надає пакет SQLAlchemy ORM
+        new_contact = Contact(**new_contact_data)
+        session.add(new_contact)
+
+    return new_contact
+
+
 
 
 async def update_contact(contact_id: int, body: ContactSchema, db: AsyncSession):

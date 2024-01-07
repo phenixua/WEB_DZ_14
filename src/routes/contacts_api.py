@@ -4,7 +4,7 @@ from src.database.db import get_async_session
 from src.entity.models import User
 from src.repository import contacts as rep_contacts
 from src.schemas.contact_schemas import ContactSchema, ContactResponseSchema
-from src.services.auth import auth_service
+from src.services.auth import auth_service, get_current_user
 
 router = APIRouter(prefix='/contacts', tags=['contacts'])
 

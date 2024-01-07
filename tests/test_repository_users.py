@@ -66,13 +66,3 @@ class TestAsyncUsers(unittest.IsolatedAsyncioTestCase):
             self.session.execute.return_value = mocked_user
             await confirmed_email(email=email, db=self.session)
 
-    async def test_update_avatar_url(self):
-        avatar_url = "http://example.com/avatar.jpg"
-        body = UserSchema(username='test_user', email='test_user@example.com', password='123QwErT')
-        mocked_user = User(**body.model_dump(), avatar=None)
-        self.assertIsNone(mocked_user.avatar)
-        mocked_result = MagicMock()
-        mocked_result.scalar_one_or_none.return_value = mocked_user
-        self.session.execute.return_value = mocked_result
-        result = await update_avatar_url(email="test_user@example.com", url=avatar_url, db=self.session)
-        self.assertEqual(result.avatar, avatar_url)

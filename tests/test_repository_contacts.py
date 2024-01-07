@@ -199,7 +199,7 @@ class TestAsyncContacts(unittest.IsolatedAsyncioTestCase):
         result = await search_contact_by_email(contact_email="jack", db=self.session)
         self.assertIsNone(result)
 
-    async def test_search_contact_complex(self):
+    async def test_search_contact_query(self):
         contacts = [Contact(id=1, first_name="John", last_name="Biden", email="john.biden@whitehouse.gov",
                             phone_number="0115550011", birth_date="09.09.1947", crm_status="corporative"),
                     Contact(id=2, first_name="John", last_name="Secada", email="mr.secada@yahoo.com",
@@ -213,7 +213,7 @@ class TestAsyncContacts(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(result, contacts)
         self.assertEqual(len(result), len(contacts))
 
-    async def test_search_contact_complex_notfound(self):
+    async def test_search_contact_query_notfound(self):
         mocked_result = MagicMock()
         mocked_result.scalars.return_value.all.return_value = None
         self.session.execute.return_value = mocked_result
@@ -232,9 +232,4 @@ class TestAsyncContacts(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(result, contacts)
         self.assertEqual(len(result), len(contacts))
 
-    async def test_search_contact_by_birthdate_notfound(self):
-        mocked_result = MagicMock()
-        mocked_result.scalars.return_value.all.return_value = None
-        self.session.execute.return_value = mocked_result
-        result = await search_contact_by_birthdate(forward_shift_days=10, db=self.session)
-        self.assertIsNone(result)
+

@@ -256,7 +256,7 @@ async def test_search_contact_by_email(client, get_token, monkeypatch):
 
 
 @pytest.mark.asyncio
-async def test_search_contact_complex(client, get_token, monkeypatch):
+async def test_search_contact_query(client, get_token, monkeypatch):
     with patch.object(auth_service, 'cache') as redis_mock:
         redis_mock.get.return_value = None
         monkeypatch.setattr("fastapi_limiter.FastAPILimiter.redis", AsyncMock())
@@ -266,7 +266,7 @@ async def test_search_contact_complex(client, get_token, monkeypatch):
             attrb = "ohn"
             queries = await rep_contacts.search_contact_query(attrb, session)
 
-            response = client.get(f"/api/search/by_complex/{attrb}?queries={queries}",
+            response = client.get(f"/api/search/by_query/{attrb}?queries={queries}",
                                   headers={"Authorization": f"Bearer {get_token[0]}"})
 
             assert response.status_code == 200

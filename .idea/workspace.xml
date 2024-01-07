@@ -1749,19 +1749,20 @@
       <change afterPath="$PROJECT_DIR$/../../../PythonCore/Загрузка/venv/assistant_mmv22/boom2.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../PythonCore/Загрузка/venv/assistant_mmv22/enemy.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../PythonCore/Загрузка/venv/assistant_mmv22/player.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/messages.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../poetry.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/../../../PythonCore/.gitattributes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../.prettierrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../PythonCore/.prettierrc.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.vscode/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/contacts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/contacts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/users.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/contacts_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/contacts_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.db" beforeDir="false" afterPath="$PROJECT_DIR$/test.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_e2e_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_e2e_auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_e2e_contacts.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_e2e_contacts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_repository_contacts.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_repository_contacts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_repository_users.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_repository_users.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../file_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../PythonCore/files/file_parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../normalize.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../PythonCore/files/normalize.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../sort.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../PythonCore/files/sort.py" afterDir="false" />

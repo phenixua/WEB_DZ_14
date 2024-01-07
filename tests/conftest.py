@@ -13,7 +13,7 @@ from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, Asyn
 from main import app
 from src.entity.models import Base, User, Contact
 from src.database.db import get_async_session
-from src.services.auth import auth_service, get_current_user
+from src.services.auth import auth_service
 from src.config import messages
 
 SQLALCHEMY_DATABASE_URL = "sqlite+aiosqlite:///./test.db"

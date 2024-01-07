@@ -75,7 +75,8 @@ async def confirmed_email(email: str, db: AsyncSession) -> None:
     """
 
     user = await get_user_by_email(email, db)
-    user.confirmed = True
+    if user:
+        user.confirmed = True
     await db.commit()
 
 

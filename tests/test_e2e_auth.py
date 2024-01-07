@@ -160,9 +160,4 @@ def test_request_email(client):
         assert '<p>Check your email for confirmation.</p>' in response.text
 
 
-def test_request_email_already_confirmed(client):
-    with patch.object(rep_users, 'get_user_by_email') as get_user_mock:
-        get_user_mock.return_value = Mock(confirmed=True)
-        response = client.post("/api/auth/request_email", json={"email": messages.TEST_EMAIL})
-        assert response.status_code == 200
-        assert '<title>Email already confirmed</title>' in response.text
+

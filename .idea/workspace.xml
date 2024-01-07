@@ -1,19 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc0cc902-0654-4813-a5e7-f13143cb841e" name="Changes" comment="" />
+    <list default="true" id="6cb67c56-cfa6-475a-a024-c9354e98d356" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.prettierrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../file_parser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../normalize.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sort.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
+  "customColor": "",
+  "associatedIndex": 3
 }]]></component>
-  <component name="ProjectId" id="2aXqiAfU1KrEWGqLao3lk1sFSK1" />
+  <component name="ProjectId" id="2acxFG8xVxewlQXx4aKwDZXFdZs" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -21,17 +35,19 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="fc0cc902-0654-4813-a5e7-f13143cb841e" name="Changes" comment="" />
-      <created>1704475397463</created>
+      <changelist id="6cb67c56-cfa6-475a-a024-c9354e98d356" name="Changes" comment="" />
+      <created>1704631565805</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1704475397463</updated>
+      <updated>1704631565805</updated>
     </task>
     <servers />
   </component>

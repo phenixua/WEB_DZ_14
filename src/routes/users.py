@@ -31,14 +31,39 @@ cloudinary.config(
 )
 
 
-@router.get("/me", response_model=UserResponseSchema, dependencies=[Depends(RateLimiter(times=1, seconds=20))],)
+@router.get("/me", response_model=UserResponseSchema, dependencies=[Depends(RateLimiter(times=1, seconds=20))], )
 async def get_current_user(user: User = Depends(auth_service.get_current_user)):
+    """
+    The get_current_user function is a dependency that will be used in the get_users function.
+    It uses the auth_service module to check if there is a valid JWT token in the request header, and if so, it returns
+    the user object associated with that token. If not, it raises an HTTPException.
+
+    :param user: User: Get the current user
+    :return: The user object
+    :doc-author: Trelent
+    """
+
     return user
 
 
-@router.patch("/avatar", response_model=UserResponseSchema, dependencies=[Depends(RateLimiter(times=1, seconds=20))],)
+@router.patch("/avatar", response_model=UserResponseSchema, dependencies=[Depends(RateLimiter(times=1, seconds=20))], )
 async def get_current_user(file: UploadFile = File(), user: User = Depends(auth_service.get_current_user),
-                           db: AsyncSession = Depends(get_async_session),):
+                           db: AsyncSession = Depends(get_async_session), ):
+    """
+    The get_current_user function is a dependency that returns the current user.
+    It will be used in several places, including:
+    - The UserResponseSchema (to include the avatar_url)
+    - The get_current_user endpoint (to return the current user)
+
+    :param file: UploadFile: Get the file from the request body
+    :param user: User: Get the current user
+    :param db: AsyncSession: Access the database
+    :param : Get the current user
+    :return: The logged-in user's user object
+    :doc-author: Trelent
+    """
+
+
     public_id = f"Web16/{user.email}"
     res = cloudinary.uploader.upload(file.file, public_id=public_id, owerite=True)
     print(res)
